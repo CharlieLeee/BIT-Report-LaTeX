@@ -10,18 +10,17 @@
 
 3. 在 `ref.bib` 中加入参考文献的 bibTeX
 
-
 ### 截图
 
-[文件](例子.pdf)
+[文件](English template/例子.pdf)
 
-![image-20200627020959052](figure\image-20200627020959052.png)
+![image-20200627020959052](figure/cover.png)
 
-![image-20200627021105010](figure\image-20200627021105010.png)
+![image-20200627021105010](figure/conclusion.png)
 
-![image-20200627021022953](figure\image-20200627021022953.png)
+![image-20200627021022953](figure/figure.png)
 
-![image-20200627021038690](figure\image-20200627021038690.png)
+![image-20200627021038690](figure/bib.png)
 
 ## 中文报告模板
 
