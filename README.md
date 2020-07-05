@@ -22,7 +22,7 @@
 ![6](figure/6.png)
 ![7](figure/7.png)
 
-![8](figure\8.png)
+![8](figure/8.png)
 
 ## 中文报告模板
 
