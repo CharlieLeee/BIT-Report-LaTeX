@@ -12,7 +12,7 @@
 
 ### 截图
 
-[文件]("English template/例子.pdf")
+[示例文件](https://github.com/CharlieLeee/BIT-Report-LaTeX/blob/master/English%20template/%E4%BE%8B%E5%AD%90.pdf)
 
 ![1](figure/1.png)
 ![2](figure/2.png)
