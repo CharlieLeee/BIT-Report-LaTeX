@@ -51,9 +51,30 @@
 % Adds space between caption and table
 \usepackage[tableposition=top]{caption}
 
+% add cc license
+\usepackage[
+type={CC},
+modifier={by-nc-sa},
+version={4.0},
+]{doclicense}
+
 % Adds hyperlinks to references and ToC
 \usepackage{hyperref}
-\hypersetup{hidelinks,linkcolor = black} % Changes the link color to black and hides the hideous red border that usually is created
+% Uncomment the line below this block to set all hyperlink color to black
+\hypersetup{
+	colorlinks,
+	linkcolor={blue},
+	citecolor={green!90!black},
+	urlcolor={red!70!black}
+}
+%\hypersetup{hidelinks,linkcolor = black} % Changes the link color to black and hides the hideous red border that usually is created
+
+% Set specific color for hyperref
+\usepackage{xcolor}
+
+
+% tcolorbox; Notice! add "-shell-escape" to the compile command
+\usepackage{tcolorbox}
 
 % If multiple images are to be added, a folder (path) with all the images can be added here 
 \graphicspath{ {Figures/} }
@@ -100,13 +121,25 @@
 
 \end{titlepage}
 
-% Adds a table of contents
-\tableofcontents{}
+% Adds a table of contents keep the link black
+{\hypersetup{linkcolor=black}
+	% or \hypersetup{linkcolor=black}, if the colorlinks=true option of hyperref is used
+	\tableofcontents{}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Text body starts here!
 \mainmatter
+
+% Comment the following two lines to remove abstract 
+\chapter*{\makebox[\linewidth]{Abstract}}
+\addcontentsline{toc}{chapter}{Abstract}
+\lipsum[5]
+
+\vspace{0.5cm}
+\noindent\textbf{Keywords}: 
+LaTex, BIT
 
 \chapter{Problem Statement}\label{chapt:problem}
 
@@ -114,12 +147,26 @@
 
 \section{Requirements} 
 
-
+\begin{figure}[h]
+	\centering
+	\subfloat[My simulationrun on Windows]{{\includegraphics[width=6.5cm]{single_sine_perturb} }}%
+	\qquad
+	\subfloat[My simulation run on Linux]{{\includegraphics[width=6.5cm]{single_sine_perturb} }}%
+	\caption{Two figure example 1}%
+	\label{fig:Two figure}%
+\end{figure}
 
 
 \chapter{Introduction}\label{chapt:intro}
 
-\lipsum
+
+
+\lipsum[1]
+
+\vspace{0.6cm}
+\begin{tcolorbox}[title=\textbf{tcolorbox example}]
+	\lipsum[2]
+\end{tcolorbox}
 
 \chapter{Part two}
 Citation is used like\cite{ex}.
@@ -134,14 +181,14 @@ Citation is used like\cite{ex}.
 		\includegraphics[scale=0.25]{Figures/dual_sine_perturb}
 		\caption{D.C.L with sinusoidal disturbance}\label{fig:figB}
 	\end{subfigure}
-	\caption{Two speed regulation systems with sinusoidal disturbances} \label{fig:twodisturb}
+	\caption{Two figure example 2} \label{fig:twodisturb}
 \end{figure}
 \chapter{Conclusions}
 
 \lipsum[2]
 
 
-\begin{table}[h]
+\begin{table}[b]
 	\centering
 	\small
 	\begin{tabular}{lccc}
@@ -162,8 +209,14 @@ Citation is used like\cite{ex}.
 \pagebreak
 
 % Adding a bibliography if citations are used in the report
+% Uncomment the following line to customize the Bibliography title
+%\renewcommand{\bibname}{References}
 \bibliographystyle{plain}
 \bibliography{ref}
+
+% Uncomment the following two lines to remvoe the cc license
+\vspace*{\fill}
+{\hypersetup{urlcolor=black}{\footnotesize \doclicenseThis}}
 % Adds reference to the Bibliography in the ToC
 \addcontentsline{toc}{chapter}{\bibname}
 

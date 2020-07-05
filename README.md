@@ -12,15 +12,17 @@
 
 ### 截图
 
-[文件](English template/例子.pdf)
+[文件]("English template/例子.pdf")
 
-![image-20200627020959052](figure/cover.png)
+![1](figure/1.png)
+![2](figure/2.png)
+![3](figure/3.png)
+![4](figure/4.png)
+![5](figure/5.png)
+![6](figure/6.png)
+![7](figure/7.png)
 
-![image-20200627021105010](figure/conclusion.png)
-
-![image-20200627021022953](figure/figure.png)
-
-![image-20200627021038690](figure/bib.png)
+![8](figure\8.png)
 
 ## 中文报告模板
 
