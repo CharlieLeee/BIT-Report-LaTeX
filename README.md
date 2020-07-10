@@ -2,6 +2,9 @@
 
 ## 英文报告模板
 
+### Overleaf 链接
+[Overleaf](https://www.overleaf.com/latex/templates/beijing-institute-of-technology-report-template/szxqnwxtbcrb)
+
 ### 英文报告模板使用方法
 
 1. 新建`/Figures` 文件夹内放置报告报告内的图片
@@ -12,7 +15,7 @@
 
 ### 截图
 
-[文件]("English template/例子.pdf")
+[示例文件](https://github.com/CharlieLeee/BIT-Report-LaTeX/blob/master/English%20template/%E4%BE%8B%E5%AD%90.pdf)
 
 ![1](figure/1.png)
 ![2](figure/2.png)
@@ -22,7 +25,7 @@
 ![6](figure/6.png)
 ![7](figure/7.png)
 
-![8](figure\8.png)
+![8](figure/8.png)
 
 ## 中文报告模板
 
