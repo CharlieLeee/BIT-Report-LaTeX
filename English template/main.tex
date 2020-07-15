@@ -110,8 +110,8 @@ version={4.0},
 	\vspace{2.6cm}
     
     % Light logo and Dark logo
-    %\centering \includegraphics[height=4cm]{bit_logo.pdf}\\ % light logo
-	\centering \includegraphics[height=4cm]{logo_01}\\ % dark logo
+    \centering \includegraphics[height=4cm]{bit_logo.pdf}\\ % light logo
+	%\centering \includegraphics[height=4cm]{logo_01}\\ % dark logo
     \centering \includegraphics[scale=0.4]{logo_slogan.pdf}
     \vspace{0.5cm}
 
@@ -141,7 +141,7 @@ version={4.0},
 
 \vspace{0.5cm}
 \noindent\textbf{Keywords}: 
-LaTex, BIT
+\LaTeX, BIT
 
 \chapter{Problem Statement}\label{chapt:problem}
 
@@ -149,21 +149,25 @@ LaTex, BIT
 
 \section{Requirements} 
 
+There's a example to place figure side by side
 \begin{figure}[h]
 	\centering
-	\subfloat[My simulationrun on Windows]{{\includegraphics[width=6.5cm]{single_sine_perturb} }}%
-	\qquad
-	\subfloat[My simulation run on Linux]{{\includegraphics[width=6.5cm]{single_sine_perturb} }}%
-	\caption{Two figure example 1}%
-	\label{fig:Two figure}%
+	\begin{minipage}[c]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{example-image-a}
+		\caption{Image A}
+	\end{minipage}
+	\hspace{1.4cm}
+	\begin{minipage}[c]{0.4\linewidth}
+		\includegraphics[width=\linewidth]{example-image-b}
+		\caption{Image B}
+	\end{minipage}%
 \end{figure}
-
 
 \chapter{Introduction}\label{chapt:intro}
 
 
 
-\lipsum[1]
+\LaTeX~is awesome. \lipsum[1]
 
 \vspace{0.6cm}
 \begin{tcolorbox}[title=\textbf{tcolorbox example}]
