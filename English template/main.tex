@@ -9,15 +9,17 @@
 \usepackage[]{graphicx}
 \usepackage[]{color}
 \usepackage{alltt}
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{utopia}
+
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{12pt}
 
 % Set page margins
-\usepackage[top=60pt,bottom=60pt,left=68pt,right=66pt]{geometry}
+\usepackage[top=60pt,bottom=60pt,left=78pt,right=78pt]{geometry}
 \usepackage{subcaption}
 % Package used for placeholder text
 \usepackage{lipsum}
@@ -97,18 +99,28 @@ version={4.0},
 
 	% Titles
 	% Information about the University
-	{\normalsize \textbf{\textit{Course name}} \\ 
-		Beijing Institute of Technology \par}
-		\vspace{5.5cm}
-	{\Huge \textbf{PROJECT NAME}} \\
-	\vspace{0.6cm}
-	{\large \textbf{PROJECT TITLE} \par}
-	\vspace{4.3cm}
-	{\normalsize James Bond \\ % \\ specifies a new line
-	             0000000 \\
-	             1120202222\par}
-	\vspace{2.6cm}
+	{\normalsize 
+		\textsc{Course Name}
+	}
+		\vspace{2.5cm}
+		
+	\rule{\linewidth}{2mm} \\[0.5cm]
+	{ \Huge\bfseries The Title of Project\\[0.2em]
+		A Really Cool Project}\\[0.5cm]
+	\rule{\linewidth}{0.6mm} \\[3.4cm]
+
+	\hspace{2cm}
+		\large \begin{tabular}{l p{5cm}}
+		\textbf{Name} & James Bond \\[10pt]
+		\textbf{Student No.} & 1120202020 \\[10pt]
+		\textbf{Class} & 0000000 \\[10pt]
+		\textbf{Department} & School of Automation \\[10pt]
+		\textbf{Email} & \texttt{example@bit.edu.cn} \\[10pt]
+		\textbf{Date} & \today \\            
+		\end{tabular}
+   
     
+    \vfill
     % Light logo and Dark logo
     \centering \includegraphics[height=4cm]{bit_logo.pdf}\\ % light logo
 	%\centering \includegraphics[height=4cm]{logo_01}\\ % dark logo
@@ -116,8 +128,7 @@ version={4.0},
     \vspace{0.5cm}
 
 		
-	% Set the date
-	{\normalsize May-2020 \par}
+	
 	
 	\pagebreak
 
@@ -137,7 +148,7 @@ version={4.0},
 % Comment the following two lines to remove abstract 
 \chapter*{\makebox[\linewidth]{Abstract}}
 \addcontentsline{toc}{chapter}{Abstract}
-\lipsum[5]
+This is a template for Projects/Report/Proposals at BIT. \lipsum[5]
 
 \vspace{0.5cm}
 \noindent\textbf{Keywords}: 
@@ -149,17 +160,19 @@ version={4.0},
 
 \section{Requirements} 
 
-There's a example to place figure side by side
+There are two logos to choose, shown in Fig \ref{fig:logo1} and Fig \ref{fig:logo2}
 \begin{figure}[h]
 	\centering
 	\begin{minipage}[c]{0.4\linewidth}
-		\includegraphics[width=\linewidth]{example-image-a}
-		\caption{Image A}
+		\includegraphics[width=\linewidth]{Figures/bit_logo.pdf}
+		\caption{Lighter logo}
+		\label{fig:logo1}
 	\end{minipage}
 	\hspace{1.4cm}
 	\begin{minipage}[c]{0.4\linewidth}
-		\includegraphics[width=\linewidth]{example-image-b}
-		\caption{Image B}
+		\includegraphics[width=\linewidth]{Figures/logo_01.pdf}
+		\caption{Darker logor}
+		\label{fig:logo2}
 	\end{minipage}%
 \end{figure}
 
@@ -176,8 +189,22 @@ There's a example to place figure side by side
 
 \chapter{Part two}
 Citation is used like\cite{ex}.
+\begin{table}[b]
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\multirow{2}{*}{Model} & \multicolumn{3}{c}{Data} \\ \cmidrule(lr){2-4}
+		& Training Set &  Test Set &  Accuracy \\
+		\midrule
+		SVM & 300 & 200 & 84.00\% \\
+		C4.5 & 300 & 200 & 77.52\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{The Comparision of Modeling Results}
+	\label{tab-label-2}
+\end{table}
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}{0.49\linewidth} \centering
 		\includegraphics[scale=0.25]{Figures/single_sine_perturb}
@@ -189,34 +216,50 @@ Citation is used like\cite{ex}.
 	\end{subfigure}
 	\caption{Two figure example 2} \label{fig:twodisturb}
 \end{figure}
+\lipsum[5]
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lcccc}
+		\toprule
+		& \multicolumn{4}{c}{Data} \\ \cmidrule(lr){2-5}
+		DoS Types & Correct &  Wrong & Total & Accuracy \\
+		\midrule
+		back & 0 & 359 & 359 & 0.00\% \\
+		land & 7 & 0 & 7 & 100.00\% \\
+		neptune & 4616 & 41 & 4657 & 99.12\% \\
+		pod & 36 & 5 & 41 & 87.80\% \\
+		smurf & 652 & 13 & 665 & 98.05\% \\
+		teardrop & 12 & 0 & 12 & 100\% \\
+		mailbomb & 0 & 293 & 293 & 0.00\% \\
+		apache2 & 72 & 665 & 737 & 9.77\% \\
+		processtable & 135 & 550 & 685 & 19.71\% \\
+		udpstorm & 0 & 2 & 2 & 0.00\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{The Model1 for DoS Attack}
+	\label{tab-label}
+\end{table}
+\lipsum[6-9]
+
 \chapter{Conclusions}
 
 \lipsum[2]
-
-
-\begin{table}[b]
+\begin{figure}[h]
 	\centering
-	\small
-	\begin{tabular}{lccc}
-		\toprule
-		\multirow{2}{*}{Speed Regulation System} & \multicolumn{3}{c}{Performances} \\ \cmidrule(lr){2-4}
-		& Start up &  Under disturbance &  Cost \\
-		\midrule
-		Single Closed Loop speed regulation system  & faster & more robust & more complicated and pricey \\
-		Dual Closed Loop speed regulation system & slower & less robust & simple and cheap \\
-		\bottomrule
-	\end{tabular}
-	\caption{The Comparison Between Two Systems}
-	\label{tab-label-1}
-\end{table}
+	\includegraphics[width=0.6\linewidth]{Figures/logo_slogan}
+	\caption{The logo of our school}
+	\label{fig:logoslogan}
+\end{figure}
+
 
 \lipsum[3-5]
 
 \pagebreak
 
 % Adding a bibliography if citations are used in the report
-% Uncomment the following line to customize the Bibliography title
-%\renewcommand{\bibname}{References}
+% Un/Comment the following line to customize the Bibliography title
+\renewcommand{\bibname}{References}
 \bibliographystyle{plain}
 \bibliography{ref}
 
