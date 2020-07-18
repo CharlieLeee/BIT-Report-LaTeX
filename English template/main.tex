@@ -4,14 +4,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sets the document class for the document
 % Openany is added to remove the book style of starting every new chapter on an odd page (not needed for reports)
-\documentclass[11pt,english, openany]{book}
+\documentclass[12pt,english, openany]{book}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Loading packages that alter the style
 \usepackage[]{graphicx}
 \usepackage[]{color}
 \usepackage{alltt}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{utopia}
+\usepackage{mathptmx}
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
@@ -99,18 +99,18 @@ version={4.0},
 
 	% Titles
 	% Information about the University
-	{\normalsize 
+	{\
 		\textsc{Course Name}
 	}
 		\vspace{2.5cm}
 		
 	\rule{\linewidth}{2mm} \\[0.5cm]
-	{ \Huge\bfseries The Title of Project\\[0.2em]
+	{ \Huge \bfseries The Title of Project\\[0.2em]
 		A Really Cool Project}\\[0.5cm]
 	\rule{\linewidth}{0.6mm} \\[3.4cm]
 
 	\hspace{2cm}
-		\large \begin{tabular}{l p{5cm}}
+		\begin{tabular}{l p{5cm}}
 		\textbf{Name} & James Bond \\[10pt]
 		\textbf{Student No.} & 1120202020 \\[10pt]
 		\textbf{Class} & 0000000 \\[10pt]
@@ -122,7 +122,7 @@ version={4.0},
     
     \vfill
     % Light logo and Dark logo
-    \centering \includegraphics[height=4cm]{bit_logo.pdf}\\ % light logo
+    \centering \includegraphics[height=3.5cm]{bit_logo.pdf}\\ % light logo
 	%\centering \includegraphics[height=4cm]{logo_01}\\ % dark logo
     \centering \includegraphics[scale=0.4]{logo_slogan.pdf}
     \vspace{0.5cm}
@@ -148,7 +148,7 @@ version={4.0},
 % Comment the following two lines to remove abstract 
 \chapter*{\makebox[\linewidth]{Abstract}}
 \addcontentsline{toc}{chapter}{Abstract}
-This is a template for Projects/Report/Proposals at BIT. \lipsum[5]
+This is a template for Projects/Report/Proposals at BIT. ~\lipsum[5]
 
 \vspace{0.5cm}
 \noindent\textbf{Keywords}: 
@@ -160,21 +160,23 @@ This is a template for Projects/Report/Proposals at BIT. \lipsum[5]
 
 \section{Requirements} 
 
-There are two logos to choose, shown in Fig \ref{fig:logo1} and Fig \ref{fig:logo2}
-\begin{figure}[h]
+There are two logos to choose, shown in Fig \ref{fig:logo1} and Fig \ref{fig:logo2}. 
+\begin{figure}[ht]
 	\centering
 	\begin{minipage}[c]{0.4\linewidth}
-		\includegraphics[width=\linewidth]{Figures/bit_logo.pdf}
+		\includegraphics[width=0.9\linewidth]{Figures/bit_logo.pdf}
 		\caption{Lighter logo}
 		\label{fig:logo1}
 	\end{minipage}
 	\hspace{1.4cm}
 	\begin{minipage}[c]{0.4\linewidth}
-		\includegraphics[width=\linewidth]{Figures/logo_01.pdf}
-		\caption{Darker logor}
+		\includegraphics[width=0.9\linewidth]{Figures/logo_01.pdf}
+		\caption{Darker logo}
 		\label{fig:logo2}
 	\end{minipage}%
 \end{figure}
+
+The template is designed for customization, in \texttt{"Figures/"} folder, \texttt{"bit\_logo.pdf"} is the left figure and \texttt{"logo\_01.pdf"} is the right figure.
 
 \chapter{Introduction}\label{chapt:intro}
 
@@ -248,7 +250,7 @@ Citation is used like\cite{ex}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\linewidth]{Figures/logo_slogan}
-	\caption{The logo of our school}
+	\caption{Our school logo}
 	\label{fig:logoslogan}
 \end{figure}
 
@@ -265,14 +267,14 @@ Citation is used like\cite{ex}.
 
 % Uncomment the following two lines to remvoe the cc license
 \vspace*{\fill}
-{\hypersetup{urlcolor=black}{\footnotesize \doclicenseThis}}
+{\hypersetup{urlcolor=black}{\scriptsize \doclicenseThis}}
 % Adds reference to the Bibliography in the ToC
 \addcontentsline{toc}{chapter}{\bibname}
 
 \pagebreak
 
-%\chapter*{Appendix A: Resources}
-%[\textit{Report the config files of the software used (i.e. SU2  and the mesher). Also attach to this report an archive with the mesh files, solutions and the reference solution data (e.g. data points of a Cp plot ...)}]
+\chapter*{Appendix}
+[\textit{Report the config files of the software used (i.e. SU2  and the mesher). Also attach to this report an archive with the mesh files, solutions and the reference solution data (e.g. data points of a Cp plot ...)}]
 %\section*{Mesh configuration files}
 %\section*{SU2 configuration files}
 %% \section{Reference solution data}
