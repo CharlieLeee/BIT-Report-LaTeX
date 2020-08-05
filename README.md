@@ -17,17 +17,17 @@
 
 [示例文件](https://github.com/CharlieLeee/BIT-Report-LaTeX/blob/master/English%20template/%E4%BE%8B%E5%AD%90.pdf)
 
-![1](figure/_页面_1.png)
-![2](figure/_页面_2.png)
-![3](figure/_页面_3.png)
-![4](figure/_页面_4.png)
-![5](figure/_页面_5.png)
-![6](figure/_页面_6.png)
-![7](figure/_页面_7.png)
+![1](figure/_页面_01.png)
+![2](figure/_页面_02.png)
+![3](figure/_页面_03.png)
+![4](figure/_页面_04.png)
+![5](figure/_页面_05.png)
+![6](figure/_页面_06.png)
+![7](figure/_页面_07.png)
 
-![8](figure/_页面_8.png)
+![8](figure/_页面_08.png)
 
-![8](figure/_页面_9.png)
+![8](figure/_页面_09.png)
 
 ## 中文报告模板
 
