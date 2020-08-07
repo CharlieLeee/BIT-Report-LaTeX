@@ -41,7 +41,7 @@
 % Changes the style of chapter headings
 \usepackage{titlesec}
 \titleformat{\chapter}
-   {\normalfont\LARGE\bfseries}{\thechapter.}{1em}{}
+{\normalfont\LARGE\bfseries}{\thechapter.}{1em}{}
 % Change distance between chapter header and text
 \titlespacing{\chapter}{0pt}{40pt}{2\baselineskip}
 
@@ -62,6 +62,8 @@ version={4.0},
 
 % Adds hyperlinks to references and ToC
 \usepackage{hyperref}
+\usepackage[capitalise]{cleveref}
+
 % Uncomment the line below this block to set all hyperlink color to black
 \hypersetup{
 	colorlinks,
@@ -87,197 +89,199 @@ version={4.0},
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Starts the document
 \begin{document}
-
-%%% Selects the language to be used for the first couple of pages
-\selectlanguage{english}
-
-%%%%% Adds the title page
-\begin{titlepage}
-	\clearpage\thispagestyle{empty}
-	\centering
-	\vspace{1cm}
-
-	% Titles
-	% Information about the University
-	{\
-		\textsc{Course Name}
-	}
+	
+	%%% Selects the language to be used for the first couple of pages
+	\selectlanguage{english}
+	
+	%%%%% Adds the title page
+	\begin{titlepage}
+		\clearpage\thispagestyle{empty}
+		\centering
+		\vspace{1cm}
+		
+		% Titles
+		% Information about the University
+		{\
+			\textsc{Course Name}
+		}
 		\vspace{2.5cm}
 		
-	\rule{\linewidth}{2mm} \\[0.5cm]
-	{ \Huge \bfseries The Title of Project\\[0.2em]
-		A Really Cool Project}\\[0.5cm]
-	\rule{\linewidth}{0.6mm} \\[3.4cm]
-
-	\hspace{2cm}
-		\begin{tabular}{l p{5cm}}
-		\textbf{Name} & James Bond \\[10pt]
-		\textbf{Student No.} & 1120202020 \\[10pt]
-		\textbf{Class} & 0000000 \\[10pt]
-		\textbf{Department} & School of Automation \\[10pt]
-		\textbf{Email} & \texttt{example@bit.edu.cn} \\[10pt]
-		\textbf{Date} & \today \\            
-		\end{tabular}
-   
-    
-    \vfill
-    % Light logo and Dark logo
-    \centering \includegraphics[height=3.5cm]{bit_logo.pdf}\\ % light logo
-	%\centering \includegraphics[height=4cm]{logo_01}\\ % dark logo
-    \centering \includegraphics[scale=0.4]{logo_slogan.pdf}
-    \vspace{0.5cm}
-
+		\rule{\linewidth}{2mm} \\[0.5cm]
+		{ \Huge \bfseries The Title of Project\\[0.2em]
+			A Really Cool Project}\\[0.5cm]
+		\rule{\linewidth}{0.6mm} \\[3.4cm]
 		
+		\hspace{2cm}
+		\begin{tabular}{l p{5cm}}
+			\textbf{Name} & James Bond \\[10pt]
+			\textbf{Student No.} & 1120202020 \\[10pt]
+			\textbf{Class} & 0000000 \\[10pt]
+			\textbf{Department} & School of Automation \\[10pt]
+			\textbf{Email} & \texttt{example@bit.edu.cn} \\[10pt]
+			\textbf{Date} & \today \\            
+		\end{tabular}
+		
+		
+		\vfill
+		% Light logo and Dark logo
+		\centering \includegraphics[height=3.5cm]{bit_logo.pdf}\\ % light logo
+		%\centering \includegraphics[height=4cm]{logo_01}\\ % dark logo
+		\centering \includegraphics[scale=0.4]{logo_slogan.pdf}
+		\vspace{0.5cm}
+		
+		
+		
+		
+		\pagebreak
+		
+	\end{titlepage}
 	
+	% Adds a table of contents keep the link black
+	{\hypersetup{linkcolor=black}
+		% or \hypersetup{linkcolor=black}, if the colorlinks=true option of hyperref is used
+		\tableofcontents{}
+	}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%% Text body starts here!
+	\mainmatter
+	
+	% Comment the following two lines to remove abstract 
+	\chapter*{\makebox[\linewidth]{Abstract}}
+	\addcontentsline{toc}{chapter}{Abstract}
+	This is a template for Projects/Report/Proposals at BIT. ~\lipsum[5]
+	
+	\vspace{0.5cm}
+	\noindent\textbf{Keywords}: 
+	\LaTeX, BIT
+	
+	\chapter{Problem Statement}\label{chapt:problem}
+	
+	\lipsum[1-2]
+	
+	\section{Requirements} 
+	
+	There are two logos to choose, shown in \cref{fig:logo1,fig:logo2}. 
+	\begin{figure}[ht]
+		\centering
+		\begin{minipage}[c]{0.4\linewidth}
+			\includegraphics[width=0.9\linewidth]{Figures/bit_logo.pdf}
+			\caption{Lighter logo}
+			\label{fig:logo1}
+		\end{minipage}
+		\hspace{1.4cm}
+		\begin{minipage}[c]{0.4\linewidth}
+			\includegraphics[width=0.9\linewidth]{Figures/logo_01.pdf}
+			\caption{Darker logo}
+			\label{fig:logo2}
+		\end{minipage}%
+	\end{figure}
+	
+	The template is designed for customization, in \texttt{"Figures/"} folder, \texttt{"bit\_logo.pdf"} is the left figure and \texttt{"logo\_01.pdf"} is the right figure.
+	
+	\chapter{Introduction}\label{chapt:intro}
+	
+	
+	
+	\LaTeX~is awesome. \lipsum[1]
+	
+	\vspace{0.6cm}
+	\begin{tcolorbox}[title=\textbf{tcolorbox example}]
+		\lipsum[2]
+	\end{tcolorbox}
+	
+	\chapter{Part Two}
+	Citation is used like\cite{ex}.
+	\begin{table}[b]
+		\centering
+		\begin{tabular}{lccc}
+			\toprule
+			\multirow{2}{*}{Model} & \multicolumn{3}{c}{Data} \\ \cmidrule(lr){2-4}
+			& Training Set &  Test Set &  Accuracy \\
+			\midrule
+			SVM & 300 & 200 & 84.00\% \\
+			C4.5 & 300 & 200 & 77.52\% \\
+			\bottomrule
+		\end{tabular}
+		\caption{The Comparision of Modeling Results}
+		\label{tab-label-2}
+	\end{table}
+	
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{0.49\linewidth} \centering
+			\includegraphics[scale=0.7]{Figures/fig1}
+			\caption{Example figure 1}\label{fig:figA}
+		\end{subfigure}
+		\begin{subfigure}{0.49\linewidth} \centering
+			\includegraphics[scale=0.7]{Figures/fig2}
+			\caption{Example figure 2}\label{fig:figB}
+		\end{subfigure}
+		\caption{Two figures side by side example 2} \label{fig:twodisturb}
+	\end{figure}
+	
+	\cref{fig:figA,fig:figB} is an example of two figures side by side.
+	 
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{lcccc}
+			\toprule
+			& \multicolumn{4}{c}{Data} \\ \cmidrule(lr){2-5}
+			DoS Types & Correct &  Wrong & Total & Accuracy \\
+			\midrule
+			back & 0 & 359 & 359 & 0.00\% \\
+			land & 7 & 0 & 7 & 100.00\% \\
+			neptune & 4616 & 41 & 4657 & 99.12\% \\
+			pod & 36 & 5 & 41 & 87.80\% \\
+			smurf & 652 & 13 & 665 & 98.05\% \\
+			teardrop & 12 & 0 & 12 & 100\% \\
+			mailbomb & 0 & 293 & 293 & 0.00\% \\
+			apache2 & 72 & 665 & 737 & 9.77\% \\
+			processtable & 135 & 550 & 685 & 19.71\% \\
+			udpstorm & 0 & 2 & 2 & 0.00\% \\
+			\bottomrule
+		\end{tabular}
+		\caption{The Model1 for DoS Attack}
+		\label{tab-label}
+	\end{table}
+	\lipsum[6-9]
+	
+	\chapter{Conclusions}
+	
+	\lipsum[2]
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\linewidth]{Figures/logo_slogan}
+		\caption{Our school logo}
+		\label{fig:logoslogan}
+	\end{figure}
+	
+	
+	\lipsum[3-5]
 	
 	\pagebreak
-
-\end{titlepage}
-
-% Adds a table of contents keep the link black
-{\hypersetup{linkcolor=black}
-	% or \hypersetup{linkcolor=black}, if the colorlinks=true option of hyperref is used
-	\tableofcontents{}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Text body starts here!
-\mainmatter
-
-% Comment the following two lines to remove abstract 
-\chapter*{\makebox[\linewidth]{Abstract}}
-\addcontentsline{toc}{chapter}{Abstract}
-This is a template for Projects/Report/Proposals at BIT. ~\lipsum[5]
-
-\vspace{0.5cm}
-\noindent\textbf{Keywords}: 
-\LaTeX, BIT
-
-\chapter{Problem Statement}\label{chapt:problem}
-
-\lipsum[1-2]
-
-\section{Requirements} 
-
-There are two logos to choose, shown in Fig \ref{fig:logo1} and Fig \ref{fig:logo2}. 
-\begin{figure}[ht]
-	\centering
-	\begin{minipage}[c]{0.4\linewidth}
-		\includegraphics[width=0.9\linewidth]{Figures/bit_logo.pdf}
-		\caption{Lighter logo}
-		\label{fig:logo1}
-	\end{minipage}
-	\hspace{1.4cm}
-	\begin{minipage}[c]{0.4\linewidth}
-		\includegraphics[width=0.9\linewidth]{Figures/logo_01.pdf}
-		\caption{Darker logo}
-		\label{fig:logo2}
-	\end{minipage}%
-\end{figure}
-
-The template is designed for customization, in \texttt{"Figures/"} folder, \texttt{"bit\_logo.pdf"} is the left figure and \texttt{"logo\_01.pdf"} is the right figure.
-
-\chapter{Introduction}\label{chapt:intro}
-
-
-
-\LaTeX~is awesome. \lipsum[1]
-
-\vspace{0.6cm}
-\begin{tcolorbox}[title=\textbf{tcolorbox example}]
-	\lipsum[2]
-\end{tcolorbox}
-
-\chapter{Part two}
-Citation is used like\cite{ex}.
-\begin{table}[b]
-	\centering
-	\begin{tabular}{lccc}
-		\toprule
-		\multirow{2}{*}{Model} & \multicolumn{3}{c}{Data} \\ \cmidrule(lr){2-4}
-		& Training Set &  Test Set &  Accuracy \\
-		\midrule
-		SVM & 300 & 200 & 84.00\% \\
-		C4.5 & 300 & 200 & 77.52\% \\
-		\bottomrule
-	\end{tabular}
-	\caption{The Comparision of Modeling Results}
-	\label{tab-label-2}
-\end{table}
-
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}{0.49\linewidth} \centering
-		\includegraphics[scale=0.25]{Figures/single_sine_perturb}
-		\caption{S.C.L with sinusoidal disturbance}\label{fig:figA}
-	\end{subfigure}
-	\begin{subfigure}{0.49\linewidth} \centering
-		\includegraphics[scale=0.25]{Figures/dual_sine_perturb}
-		\caption{D.C.L with sinusoidal disturbance}\label{fig:figB}
-	\end{subfigure}
-	\caption{Two figure example 2} \label{fig:twodisturb}
-\end{figure}
-\lipsum[5]
-
-\begin{table}[h]
-	\centering
-	\begin{tabular}{lcccc}
-		\toprule
-		& \multicolumn{4}{c}{Data} \\ \cmidrule(lr){2-5}
-		DoS Types & Correct &  Wrong & Total & Accuracy \\
-		\midrule
-		back & 0 & 359 & 359 & 0.00\% \\
-		land & 7 & 0 & 7 & 100.00\% \\
-		neptune & 4616 & 41 & 4657 & 99.12\% \\
-		pod & 36 & 5 & 41 & 87.80\% \\
-		smurf & 652 & 13 & 665 & 98.05\% \\
-		teardrop & 12 & 0 & 12 & 100\% \\
-		mailbomb & 0 & 293 & 293 & 0.00\% \\
-		apache2 & 72 & 665 & 737 & 9.77\% \\
-		processtable & 135 & 550 & 685 & 19.71\% \\
-		udpstorm & 0 & 2 & 2 & 0.00\% \\
-		\bottomrule
-	\end{tabular}
-	\caption{The Model1 for DoS Attack}
-	\label{tab-label}
-\end{table}
-\lipsum[6-9]
-
-\chapter{Conclusions}
-
-\lipsum[2]
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.6\linewidth]{Figures/logo_slogan}
-	\caption{Our school logo}
-	\label{fig:logoslogan}
-\end{figure}
-
-
-\lipsum[3-5]
-
-\pagebreak
-
-% Adding a bibliography if citations are used in the report
-% Un/Comment the following line to customize the Bibliography title
-\renewcommand{\bibname}{References}
-\bibliographystyle{plain}
-\bibliography{ref}
-
-% Uncomment the following two lines to remvoe the cc license
-\vspace*{\fill}
-{\hypersetup{urlcolor=black}{\scriptsize \doclicenseThis}}
-% Adds reference to the Bibliography in the ToC
-\addcontentsline{toc}{chapter}{\bibname}
-
-\pagebreak
-
-\chapter*{Appendix}
-[\textit{Report the config files of the software used (i.e. SU2  and the mesher). Also attach to this report an archive with the mesh files, solutions and the reference solution data (e.g. data points of a Cp plot ...)}]
-%\section*{Mesh configuration files}
-%\section*{SU2 configuration files}
-%% \section{Reference solution data}
-
-
+	
+	% Adding a bibliography if citations are used in the report
+	% Un/Comment the following line to customize the Bibliography title
+	\renewcommand{\bibname}{References}
+	\bibliographystyle{plain}
+	\bibliography{ref}
+	
+	% Uncomment the following two lines to remvoe the cc license
+	\vspace*{\fill}
+	{\hypersetup{urlcolor=black}{\scriptsize \doclicenseThis}}
+	% Adds reference to the Bibliography in the ToC
+	\addcontentsline{toc}{chapter}{\bibname}
+	
+	\pagebreak
+	
+	\chapter*{Appendix}
+	\addcontentsline{toc}{chapter}{Appendix}
+	[\textit{Report the config files of the software used (i.e. SU2  and the mesher). Also attach to this report an archive with the mesh files, solutions and the reference solution data (e.g. data points of a Cp plot ...)}]
+	%\section*{Mesh configuration files}
+	%\section*{SU2 configuration files}
+	%% \section{Reference solution data}
+	
+	
 \end{document}

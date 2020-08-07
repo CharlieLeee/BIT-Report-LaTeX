@@ -1,21 +1,19 @@
-# 北京理工大学课程报告LaTeX模板
+# LaTex templates for Beijing Institute of Technology
 
-## 英文报告模板
+## English report
 
-### Overleaf 链接
+### Overleaf preview
 [Overleaf](https://www.overleaf.com/latex/templates/beijing-institute-of-technology-report-template/szxqnwxtbcrb)
 
-### 英文报告模板使用方法
+### Usage
 
-1. 新建`/Figures` 文件夹内放置报告报告内的图片
+1. place figures in the report in `/Figures` folder
+2. edit  `main.tex` 
+3. add bibTex of references in `ref.bib` 
 
-2. 在 `main.tex` 内编辑报告内容
+### Screenshots
 
-3. 在 `ref.bib` 中加入参考文献的 bibTeX
-
-### 截图
-
-[示例文件](https://github.com/CharlieLeee/BIT-Report-LaTeX/blob/master/English%20template/%E4%BE%8B%E5%AD%90.pdf)
+[PDF preview](https://github.com/CharlieLeee/BIT-Report-LaTeX/blob/master/English%20template/%E4%BE%8B%E5%AD%90.pdf)
 
 ![1](figure/_页面_01.png)
 ![2](figure/_页面_02.png)
@@ -27,7 +25,9 @@
 
 ![8](figure/_页面_08.png)
 
-![8](figure/_页面_09.png)
+![9](figure/_页面_09.png)
+
+![10](figure/_页面_10.png)
 
 ## 中文报告模板
 
