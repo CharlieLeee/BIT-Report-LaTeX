@@ -29,8 +29,4 @@
 
 ![10](figure/_页面_10.png)
 
-## 中文报告模板
-
-## TODO
-
-1. 加入中文报告模板
+**todo**: add chinese version
