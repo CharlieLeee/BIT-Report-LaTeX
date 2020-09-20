@@ -86,6 +86,11 @@ version={4.0},
 % Separates the first part of the report/thesis in Roman numerals
 \frontmatter
 
+% Uncomment to stop the new chapter start at a new page
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+%\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Starts the document
 \begin{document}
@@ -155,7 +160,7 @@ version={4.0},
 	\vspace{0.5cm}
 	\noindent\textbf{Keywords}: 
 	\LaTeX, BIT
-	
+	\clearpage
 	\chapter{Problem Statement}\label{chapt:problem}
 	
 	\lipsum[1-2]
