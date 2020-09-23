@@ -5,6 +5,9 @@
 ### Overleaf preview
 [Overleaf](https://www.overleaf.com/latex/templates/beijing-institute-of-technology-report-template/szxqnwxtbcrb)
 
+### LaTeX Studio Link
+[LaTeX Studio](https://www.latexstudio.net/index/details/index/ids/805)
+
 ### Usage
 
 1. place figures in the report in `/Figures` folder
