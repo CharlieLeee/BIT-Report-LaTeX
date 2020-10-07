@@ -4,7 +4,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sets the document class for the document
 % Openany is added to remove the book style of starting every new chapter on an odd page (not needed for reports)
-\documentclass[12pt,english, openany]{book}
+\documentclass[12pt,english,openany,a4paper]{book}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Loading packages that alter the style
 \usepackage[]{graphicx}
 \usepackage[]{color}
@@ -128,8 +128,8 @@ version={4.0},
 		\hspace{2cm}
 		\begin{tabular}{l p{5cm}}
 			\textbf{Name} & James Bond \\[10pt]
-			\textbf{Student No.} & 1120202020 \\[10pt]
-			\textbf{Class} & 0000000 \\[10pt]
+			\textbf{Student No.} & \texttt{1120202020} \\[10pt]
+			\textbf{Class} & \texttt{0000000} \\[10pt]
 			\textbf{Department} & School of Automation \\[10pt]
 			\textbf{Email} & \texttt{example@bit.edu.cn} \\[10pt]
 			\textbf{Date} & \today \\            
@@ -149,6 +149,18 @@ version={4.0},
 		\pagebreak
 		
 	\end{titlepage}
+	%% Uncomment for title page print two pages per sheet
+	%\shipout\null
+	
+	% Comment the following two lines to remove abstract 
+	\chapter*{\makebox[\linewidth]{Abstract}}
+	\addcontentsline{toc}{chapter}{Abstract}
+	This is a template for Projects/Report/Proposals at BIT. ~\lipsum[5]
+	
+	\vspace{0.5cm}
+	\noindent\textbf{Keywords}: 
+	\LaTeX, BIT
+	\clearpage
 	
 	% Adds a table of contents keep the link black
 	\let\cleardoublepage\clearpage
@@ -162,15 +174,7 @@ version={4.0},
 	%%%%% Text body starts here!
 	\mainmatter
 	
-	% Comment the following two lines to remove abstract 
-	\chapter*{\makebox[\linewidth]{Abstract}}
-	\addcontentsline{toc}{chapter}{Abstract}
-	This is a template for Projects/Report/Proposals at BIT. ~\lipsum[5]
 	
-	\vspace{0.5cm}
-	\noindent\textbf{Keywords}: 
-	\LaTeX, BIT
-	\clearpage
 	\chapter{Problem Statement}\label{chapt:problem}
 	
 	\lipsum[1-2]
