@@ -71,7 +71,14 @@ version={4.0},
 ]{doclicense}
 
 % Adds hyperlinks to references and ToC
-\usepackage{hyperref}
+\usepackage[backref=page]{hyperref} % hyperlinks
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{{\footnotesize [%
+		\ifcase #1 Not cited.%
+		\or Cited on page~#2%
+		\else Cited on pages #2%
+		\fi%
+		]}}
 \usepackage[capitalise]{cleveref}
 
 % Uncomment the line below this block to set all hyperlink color to black
